@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import Inbox from "./pages/Inbox";
 import Profile from "./pages/Profile";
 import Add from "./pages/Add";
+import ItemOptions from "./pages/ItemOptions";
+import MakeOffer from "./pages/MakeOffer";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/inbox" element={<Inbox />} />
           <Route path="/add" element={<Add />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/item-options" element={<ItemOptions />} />
+          <Route path="/make-offer" element={<MakeOffer />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

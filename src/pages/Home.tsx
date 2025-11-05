@@ -20,9 +20,13 @@ const Home = () => {
 
   const handleSwipe = (direction: "left" | "right") => {
     if (direction === "right") {
-      setSavedItems([...savedItems, sampleItems[currentIndex]]);
+      navigate("/item-options", { state: { item: sampleItems[currentIndex] } });
     }
     setCurrentIndex((prev) => (prev + 1) % sampleItems.length);
+  };
+
+  const handleSave = () => {
+    setSavedItems([...savedItems, sampleItems[currentIndex]]);
   };
 
   const handleRefresh = () => {
@@ -82,6 +86,7 @@ const Home = () => {
                   <SwipeCard 
                     item={sampleItems[currentIndex]} 
                     onSwipe={handleSwipe}
+                    onSave={handleSave}
                   />
                 )}
               </div>
