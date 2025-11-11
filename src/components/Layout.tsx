@@ -16,13 +16,13 @@ const Layout = ({ children }: LayoutProps) => {
   ];
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <main className="flex-1 pb-20">
+    <div className="min-h-screen bg-background flex flex-col max-w-[375px] mx-auto">
+      <main className="flex-1 pb-20 pt-safe">
         {children}
       </main>
       
-      <nav className="fixed bottom-0 left-0 right-0 bg-card border-t border-border">
-        <div className="max-w-md mx-auto px-6 py-3 flex justify-around items-center">
+      <nav className="fixed bottom-0 left-0 right-0 bg-card border-t border-border max-w-[375px] mx-auto pb-safe">
+        <div className="px-6 py-3 flex justify-around items-center">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
             return (
