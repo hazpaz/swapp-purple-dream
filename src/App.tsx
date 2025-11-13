@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cover from "./pages/Cover";
 import Home from "./pages/Home";
 import Inbox from "./pages/Inbox";
+import Chat from "./pages/Chat";
 import Profile from "./pages/Profile";
 import Add from "./pages/Add";
 import ItemOptions from "./pages/ItemOptions";
@@ -23,6 +24,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Cover />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/chat" element={<Chat />} />
           <Route path="/inbox" element={<Inbox />} />
           <Route path="/add" element={<Add />} />
           <Route path="/profile" element={<Profile />} />

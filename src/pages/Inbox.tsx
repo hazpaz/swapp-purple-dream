@@ -56,6 +56,7 @@ const Inbox = () => {
             {filteredConversations.map((conversation) => (
               <div
                 key={conversation.id}
+                onClick={() => navigate("/chat", { state: { conversation } })}
                 className="px-6 py-4 hover:bg-secondary/50 transition-colors cursor-pointer"
               >
                 <div className="flex items-center gap-4">
