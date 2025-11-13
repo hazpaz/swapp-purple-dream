@@ -34,7 +34,7 @@ const MakeOffer = () => {
 
     toast({
       title: "Offer Submitted!",
-      description: `Your offer of $${offer} has been sent to the seller.`,
+      description: `Your offer of AED ${offer} has been sent to the seller.`,
     });
 
     setTimeout(() => {
@@ -70,14 +70,16 @@ const MakeOffer = () => {
           <div className="space-y-2">
             <Label htmlFor="offer">Your Offer Amount</Label>
             <div className="relative">
-              <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-foreground font-semibold">
+                AED
+              </span>
               <Input
                 id="offer"
                 type="number"
                 placeholder="0.00"
                 value={offer}
                 onChange={(e) => setOffer(e.target.value)}
-                className="pl-10 text-lg h-12"
+                className="pl-16 text-lg h-12"
               />
             </div>
           </div>
