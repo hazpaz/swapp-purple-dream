@@ -7,10 +7,14 @@ import Layout from "@/components/Layout";
 import { useNavigate } from "react-router-dom";
 
 const sampleItems = [
-  { id: "1", title: "Vintage Camera", age: "2 years old", image: "" },
-  { id: "2", title: "Designer Shoes", age: "6 months old", image: "" },
-  { id: "3", title: "Gaming Console", age: "1 year old", image: "" },
-  { id: "4", title: "Mountain Bike", age: "3 years old", image: "" },
+  { id: "1", title: "Area Carpet", age: "Used 1 semester", image: "" },
+  { id: "2", title: "Shoe Rack", age: "Like new", image: "" },
+  { id: "3", title: "Coffee Mugs Set", age: "Barely used", image: "" },
+  { id: "4", title: "Plastic Hangers (20pcs)", age: "Good condition", image: "" },
+  { id: "5", title: "Winter Jacket", age: "Used 1 year", image: "" },
+  { id: "6", title: "Dumbbell Set (10kg)", age: "Like new", image: "" },
+  { id: "7", title: "Desk Lamp", age: "Works perfectly", image: "" },
+  { id: "8", title: "Mini Fridge", age: "2 years old", image: "" },
 ];
 
 const Home = () => {
