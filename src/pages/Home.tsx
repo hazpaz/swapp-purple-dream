@@ -7,13 +7,13 @@ import Layout from "@/components/Layout";
 import { useNavigate } from "react-router-dom";
 
 const sampleItems = [
-  { id: "1", title: "Area Carpet", age: "Used 1 semester", image: "" },
-  { id: "2", title: "Shoe Rack", age: "Like new", image: "" },
-  { id: "3", title: "Coffee Mugs Set", age: "Barely used", image: "" },
-  { id: "4", title: "Plastic Hangers (20pcs)", age: "Good condition", image: "" },
-  { id: "5", title: "Winter Jacket", age: "Used 1 year", image: "" },
-  { id: "6", title: "Dumbbell Set (10kg)", age: "Like new", image: "" },
-  { id: "7", title: "Desk Lamp", age: "Works perfectly", image: "" },
+  { id: "1", title: "Area Carpet", age: "8 months old", image: "" },
+  { id: "2", title: "Shoe Rack", age: "3 weeks old", image: "" },
+  { id: "3", title: "Coffee Mugs Set", age: "45 days old", image: "" },
+  { id: "4", title: "Plastic Hangers (20pcs)", age: "2 months old", image: "" },
+  { id: "5", title: "Winter Jacket", age: "1 year old", image: "" },
+  { id: "6", title: "Dumbbell Set (10kg)", age: "5 months old", image: "" },
+  { id: "7", title: "Desk Lamp", age: "6 months old", image: "" },
   { id: "8", title: "Mini Fridge", age: "2 years old", image: "" },
 ];
 
