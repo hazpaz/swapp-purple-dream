@@ -21,10 +21,10 @@ const Cover = () => {
         {/* Title */}
         <div className="text-center space-y-3 animate-fade-in">
           <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            Swapp
+            SwappIt
           </h1>
           <p className="text-lg text-muted-foreground max-w-[280px]">
-            Swipe, Trade, Connect
+            Swipe. Shop. Swap.
           </p>
         </div>
 
