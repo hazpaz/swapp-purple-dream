@@ -82,11 +82,19 @@ const SwipeCard = ({ item, onSwipe, onSave }: SwipeCardProps) => {
         onTouchMove={(e) => handleDragMove(e.touches[0].clientX)}
         onTouchEnd={handleDragEnd}
       >
-        {/* Image placeholder */}
-        <div className="aspect-[4/5] bg-gradient-to-br from-secondary to-muted flex items-center justify-center relative">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <X className="w-32 h-32 stroke-[1px] text-muted-foreground/20" />
-          </div>
+        {/* Item image */}
+        <div className="aspect-[4/5] bg-gradient-to-br from-secondary to-muted flex items-center justify-center relative overflow-hidden">
+          {item.image ? (
+            <img 
+              src={item.image} 
+              alt={item.title}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <X className="w-32 h-32 stroke-[1px] text-muted-foreground/20" />
+            </div>
+          )}
         </div>
         
         {/* Info section */}
