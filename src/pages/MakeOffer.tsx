@@ -58,9 +58,14 @@ const MakeOffer = () => {
 
         <Card className="p-4 mb-6">
           <div className="flex items-center gap-4">
-            <div className="w-20 h-20 bg-gradient-to-br from-secondary to-muted rounded-lg" />
+            <div className="w-20 h-20 rounded-lg overflow-hidden bg-gradient-to-br from-secondary to-muted">
+              {item.image && (
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+              )}
+            </div>
             <div>
               <h2 className="text-lg font-bold text-foreground">{item.title}</h2>
+              <p className="text-primary font-semibold">{item.price} AED</p>
               <p className="text-sm text-muted-foreground">{item.age}</p>
             </div>
           </div>
