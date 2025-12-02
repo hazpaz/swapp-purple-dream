@@ -9,6 +9,7 @@ interface SwipeCardProps {
     title: string;
     age: string;
     image: string;
+    price: number;
   };
   onSwipe: (direction: "left" | "right") => void;
   onSave: () => void;
@@ -93,7 +94,8 @@ const SwipeCard = ({ item, onSwipe, onSave }: SwipeCardProps) => {
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-2xl font-bold text-foreground">{item.title}</h3>
-              <p className="text-muted-foreground">{item.age}</p>
+              <p className="text-lg font-semibold text-primary">{item.price} AED</p>
+              <p className="text-muted-foreground text-sm">{item.age}</p>
             </div>
             <Button 
               size="icon" 

@@ -7,14 +7,14 @@ import Layout from "@/components/Layout";
 import { useNavigate } from "react-router-dom";
 
 const sampleItems = [
-  { id: "1", title: "Area Carpet", age: "8 months old", image: "" },
-  { id: "2", title: "Shoe Rack", age: "3 weeks old", image: "" },
-  { id: "3", title: "Coffee Mugs Set", age: "45 days old", image: "" },
-  { id: "4", title: "Plastic Hangers (20pcs)", age: "2 months old", image: "" },
-  { id: "5", title: "Winter Jacket", age: "1 year old", image: "" },
-  { id: "6", title: "Dumbbell Set (10kg)", age: "5 months old", image: "" },
-  { id: "7", title: "Desk Lamp", age: "6 months old", image: "" },
-  { id: "8", title: "Mini Fridge", age: "2 years old", image: "" },
+  { id: "1", title: "Area Carpet", age: "8 months old", image: "", price: 45 },
+  { id: "2", title: "Shoe Rack", age: "3 weeks old", image: "", price: 25 },
+  { id: "3", title: "Coffee Mugs Set", age: "45 days old", image: "", price: 15 },
+  { id: "4", title: "Plastic Hangers (20pcs)", age: "2 months old", image: "", price: 8 },
+  { id: "5", title: "Winter Jacket", age: "1 year old", image: "", price: 35 },
+  { id: "6", title: "Dumbbell Set (10kg)", age: "5 months old", image: "", price: 55 },
+  { id: "7", title: "Desk Lamp", age: "6 months old", image: "", price: 20 },
+  { id: "8", title: "Mini Fridge", age: "2 years old", image: "", price: 60 },
 ];
 
 const Home = () => {
@@ -111,7 +111,10 @@ const Home = () => {
                       key={item.id}
                       className="bg-card rounded-2xl p-4 border border-border shadow-sm"
                     >
-                      <h3 className="font-semibold text-foreground">{item.title}</h3>
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-semibold text-foreground">{item.title}</h3>
+                        <span className="text-primary font-bold">{item.price} AED</span>
+                      </div>
                       <p className="text-sm text-muted-foreground">{item.age}</p>
                     </div>
                   ))
