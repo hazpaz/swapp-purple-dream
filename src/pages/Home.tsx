@@ -6,15 +6,24 @@ import SwipeCard from "@/components/SwipeCard";
 import Layout from "@/components/Layout";
 import { useNavigate } from "react-router-dom";
 
+import carpetImg from "@/assets/items/carpet.jpg";
+import shoeRackImg from "@/assets/items/shoe-rack.jpg";
+import coffeeMugsImg from "@/assets/items/coffee-mugs.jpg";
+import hangersImg from "@/assets/items/hangers.jpg";
+import jacketImg from "@/assets/items/jacket.jpg";
+import dumbbellsImg from "@/assets/items/dumbbells.jpg";
+import deskLampImg from "@/assets/items/desk-lamp.jpg";
+import miniFridgeImg from "@/assets/items/mini-fridge.jpg";
+
 const sampleItems = [
-  { id: "1", title: "Area Carpet", age: "8 months old", image: "", price: 45 },
-  { id: "2", title: "Shoe Rack", age: "3 weeks old", image: "", price: 25 },
-  { id: "3", title: "Coffee Mugs Set", age: "45 days old", image: "", price: 15 },
-  { id: "4", title: "Plastic Hangers (20pcs)", age: "2 months old", image: "", price: 8 },
-  { id: "5", title: "Winter Jacket", age: "1 year old", image: "", price: 35 },
-  { id: "6", title: "Dumbbell Set (10kg)", age: "5 months old", image: "", price: 55 },
-  { id: "7", title: "Desk Lamp", age: "6 months old", image: "", price: 20 },
-  { id: "8", title: "Mini Fridge", age: "2 years old", image: "", price: 60 },
+  { id: "1", title: "Area Carpet", age: "8 months old", image: carpetImg, price: 45 },
+  { id: "2", title: "Shoe Rack", age: "3 weeks old", image: shoeRackImg, price: 25 },
+  { id: "3", title: "Coffee Mugs Set", age: "45 days old", image: coffeeMugsImg, price: 15 },
+  { id: "4", title: "Plastic Hangers (20pcs)", age: "2 months old", image: hangersImg, price: 8 },
+  { id: "5", title: "Winter Jacket", age: "1 year old", image: jacketImg, price: 35 },
+  { id: "6", title: "Dumbbell Set (10kg)", age: "5 months old", image: dumbbellsImg, price: 55 },
+  { id: "7", title: "Desk Lamp", age: "6 months old", image: deskLampImg, price: 20 },
+  { id: "8", title: "Mini Fridge", age: "2 years old", image: miniFridgeImg, price: 60 },
 ];
 
 const Home = () => {
