@@ -27,8 +27,13 @@ const ItemOptions = () => {
         </Button>
 
         <Card className="p-6 mb-6">
-          <div className="aspect-[4/5] bg-gradient-to-br from-secondary to-muted rounded-xl mb-4" />
-          <h2 className="text-2xl font-bold text-foreground mb-2">{item.title}</h2>
+          <div className="aspect-[4/5] bg-gradient-to-br from-secondary to-muted rounded-xl mb-4 overflow-hidden">
+            {item.image && (
+              <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+            )}
+          </div>
+          <h2 className="text-2xl font-bold text-foreground mb-1">{item.title}</h2>
+          <p className="text-xl font-semibold text-primary mb-1">{item.price} AED</p>
           <p className="text-muted-foreground">{item.age}</p>
         </Card>
 
