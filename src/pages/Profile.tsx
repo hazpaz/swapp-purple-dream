@@ -1,10 +1,11 @@
-import { ChevronLeft, User as UserIcon, Bell, Lock, LogOut } from "lucide-react";
+import { ChevronLeft, User as UserIcon, Bell, Lock, LogOut, LogIn } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import { useNavigate } from "react-router-dom";
 
 const menuItems = [
+  { icon: LogIn, label: "Sign In", action: "sign-in" },
   { icon: UserIcon, label: "Edit Profile", action: "edit-profile" },
   { icon: Bell, label: "Notifications", action: "notifications" },
   { icon: Lock, label: "Security", action: "security" },
