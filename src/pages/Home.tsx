@@ -53,7 +53,7 @@ const Home = () => {
         <header className="bg-card border-b border-border sticky top-0 z-10">
           <div className="max-w-md mx-auto px-6 py-4 flex items-center justify-between">
             <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              SwappIt
+              Swapp
             </h1>
             <div className="flex gap-2">
               <Button 
