@@ -20,7 +20,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/swapp-purple-dream">
         <Routes>
           <Route path="/" element={<Cover />} />
           <Route path="/home" element={<Home />} />
