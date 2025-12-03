@@ -40,6 +40,7 @@ const Home = () => {
 
   const handleSave = () => {
     setSavedItems([...savedItems, sampleItems[currentIndex]]);
+    setCurrentIndex((prev) => (prev + 1) % sampleItems.length);
   };
 
   const handleRefresh = () => {
@@ -118,7 +119,8 @@ const Home = () => {
                   savedItems.map((item) => (
                     <div 
                       key={item.id}
-                      className="bg-card rounded-2xl p-4 border border-border shadow-sm"
+                      className="bg-card rounded-2xl p-4 border border-border shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
+                      onClick={() => navigate("/item-options", { state: { item } })}
                     >
                       <div className="flex items-center justify-between">
                         <h3 className="font-semibold text-foreground">{item.title}</h3>
