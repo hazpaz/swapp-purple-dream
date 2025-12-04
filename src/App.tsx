@@ -22,8 +22,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
-          <Route path="/" element={<Cover />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/inbox" element={<Inbox />} />
           <Route path="/add" element={<Add />} />
