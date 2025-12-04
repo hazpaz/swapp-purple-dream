@@ -19,14 +19,20 @@ const SwipeCard = ({ item, onSwipe, onSave }: SwipeCardProps) => {
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState(0);
   const [startX, setStartX] = useState(0);
+  const [velocity, setVelocity] = useState(0);
+  const [lastX, setLastX] = useState(0);
+  const [lastTime, setLastTime] = useState(0);
   const cardRef = useRef<HTMLDivElement>(null);
+
+  const SWIPE_THRESHOLD = 60;
+  const VELOCITY_THRESHOLD = 0.3;
 
   const handleSwipeLeft = () => {
     setOffset(-400);
     setTimeout(() => {
       onSwipe("left");
       setOffset(0);
-    }, 300);
+    }, 200);
   };
 
   const handleSwipeRight = () => {
@@ -34,32 +40,49 @@ const SwipeCard = ({ item, onSwipe, onSave }: SwipeCardProps) => {
     setTimeout(() => {
       onSwipe("right");
       setOffset(0);
-    }, 300);
+    }, 200);
   };
 
   const handleDragStart = (clientX: number) => {
     setIsDragging(true);
     setStartX(clientX);
+    setLastX(clientX);
+    setLastTime(Date.now());
+    setVelocity(0);
   };
 
   const handleDragMove = (clientX: number) => {
     if (!isDragging) return;
     const diff = clientX - startX;
     setOffset(diff);
+    
+    // Calculate velocity
+    const now = Date.now();
+    const dt = now - lastTime;
+    if (dt > 0) {
+      const dx = clientX - lastX;
+      setVelocity(dx / dt);
+    }
+    setLastX(clientX);
+    setLastTime(now);
   };
 
   const handleDragEnd = () => {
+    if (!isDragging) return;
     setIsDragging(false);
     
-    if (Math.abs(offset) > 100) {
-      if (offset > 0) {
-        handleSwipeRight();
-      } else {
-        handleSwipeLeft();
-      }
+    // Use either distance OR velocity to trigger swipe
+    const shouldSwipeRight = offset > SWIPE_THRESHOLD || velocity > VELOCITY_THRESHOLD;
+    const shouldSwipeLeft = offset < -SWIPE_THRESHOLD || velocity < -VELOCITY_THRESHOLD;
+    
+    if (shouldSwipeRight) {
+      handleSwipeRight();
+    } else if (shouldSwipeLeft) {
+      handleSwipeLeft();
     } else {
       setOffset(0);
     }
+    setVelocity(0);
   };
 
   return (

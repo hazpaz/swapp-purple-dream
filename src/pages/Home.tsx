@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RefreshCw, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -26,10 +26,33 @@ const sampleItems = [
   { id: "8", title: "Mini Fridge", age: "2 years old", image: miniFridgeImg, price: 60 },
 ];
 
+const SAVED_ITEMS_KEY = "swapp_saved_items";
+
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [savedItems, setSavedItems] = useState<typeof sampleItems>([]);
+  const [savedItems, setSavedItems] = useState<typeof sampleItems>(() => {
+    const stored = localStorage.getItem(SAVED_ITEMS_KEY);
+    if (stored) {
+      try {
+        const parsed = JSON.parse(stored);
+        // Re-map images since they can't be stored in localStorage
+        return parsed.map((item: any) => {
+          const original = sampleItems.find(s => s.id === item.id);
+          return original || item;
+        }).filter(Boolean);
+      } catch {
+        return [];
+      }
+    }
+    return [];
+  });
   const navigate = useNavigate();
+
+  // Persist saved items to localStorage
+  useEffect(() => {
+    const toStore = savedItems.map(({ id, title, age, price }) => ({ id, title, age, price }));
+    localStorage.setItem(SAVED_ITEMS_KEY, JSON.stringify(toStore));
+  }, [savedItems]);
 
   const handleSwipe = (direction: "left" | "right") => {
     if (direction === "right") {
@@ -39,7 +62,10 @@ const Home = () => {
   };
 
   const handleSave = () => {
-    setSavedItems([...savedItems, sampleItems[currentIndex]]);
+    const item = sampleItems[currentIndex];
+    if (!savedItems.find(s => s.id === item.id)) {
+      setSavedItems([...savedItems, item]);
+    }
     setCurrentIndex((prev) => (prev + 1) % sampleItems.length);
   };
 
