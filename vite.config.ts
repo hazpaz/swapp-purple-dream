@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/swapp-purple-dream/',
+  base: mode === 'production' ? '/swapp-purple-dream/' : '/',
   server: {
     host: "::",
     port: 8080,
